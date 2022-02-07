@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from discord.ext import commands
+from disnake.ext import commands
 import discord
 import os
 
@@ -13,7 +13,20 @@ async def on_ready():
     print("Bot is ready")
     
 
-try:
-    bot.run(token)
-except Exception as e:
-    print(f"Error in {e}")
+def load_commands(command_type: str) -> None:
+    for file in os.listdir(f"./cogs/{command_type}"):
+        if file.endswith(".py"):
+            extension = file[:-3]
+            try:
+                bot.load_extension(f"cogs.{command_type}.{extension}")
+                print(f"Load extension {extension}")
+            except Exception as e:
+                exception = f"{type(e).__name__}: {e}"
+                print(f"fail to load extension {extension}\n{exception}")
+    
+if __name__ == "__main__":
+    load_commands("normal-commands")
+    load_commands("salary-commands")
+
+
+bot.run(token)
