@@ -26,7 +26,7 @@ def load_commands(command_type: str) -> None:
     
 if __name__ == "__main__":
     load_commands("normal-commands")
-    load_commands("salary-commands") 
+    load_commands("stone-commands") 
 
 
 bot.run(token)
