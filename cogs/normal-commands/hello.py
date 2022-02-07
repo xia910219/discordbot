@@ -6,7 +6,7 @@ class Hello(commands.Cog):
     
     @commands.command(pass_context = True)
     async def hello(self, ctx):
-        await ctx.send("Hello ~")
+        await ctx.send("Hello ~1")
 
 def setup(bot):
     bot.add_cog(Hello(bot))
