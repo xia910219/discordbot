@@ -12,7 +12,7 @@ class load_reload(commands.Cog):
     async def load(self, ctx, extension):
         try:
             self.bot.load_extension(f'cogs.normal-commands.{extension}')
-            await ctx.author.send(f"{extension} 已上傳")
+            await ctx.send(f"{extension} 已上傳")
         except Exception as e:
             await ctx.send(e)
 
@@ -21,7 +21,7 @@ class load_reload(commands.Cog):
     async def unload(self, ctx, extension):
         try:
             self.bot.unload_extension(f'cogs.normal-commands.{extension}')
-            await ctx.author.send(f'{extension} 已卸載')
+            await ctx.send(f'{extension} 已卸載')
         except Exception as e:
             await ctx.send(e)
 
@@ -30,7 +30,7 @@ class load_reload(commands.Cog):
     async def reload(self, ctx, extension):
         try:
             self.bot.reload_extension(f'cogs.normal-commands.{extension}')
-            await ctx.author.send(f'{extension} 已更新')
+            await ctx.send(f'{extension} 已更新')
         except Exception as e:
             await ctx.send(e)
 
