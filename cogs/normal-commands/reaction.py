@@ -15,6 +15,7 @@ class Reaction(commands.Cog):
                 role = guild.get_role(940495274550378507)
                 await payload.member.add_roles(role)
                 await payload.member.send(f"你取得了{role}身分組")
+                
     
     #@commands.Cog.listener()
     #async def on_raw_reaction_remove(self, payload: disnake.RawReactionActionEvent):
