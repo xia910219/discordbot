@@ -24,7 +24,7 @@ async def on_member_remove(member):
     guild = member.guild
     if guild.system_channel is None:
         await guild.system_channel.send(f"{ guild.name } was leaved")   
- 
+
 
 def load_commands(command_type: str) -> None:
     for file in os.listdir(f"./cogs/{command_type}"):
