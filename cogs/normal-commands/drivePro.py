@@ -2,6 +2,7 @@ from re import purge
 from disnake.ext import commands
 from disnake.ext.commands import *
 import disnake
+import json
 
 class dirvePro(commands.Cog):
     
@@ -10,7 +11,6 @@ class dirvePro(commands.Cog):
     
     @commands.command()
     async def ht(self, ctx, msg, httpUrl):
-        program = ["c", "c++"]
         print(msg)
         print(httpUrl)
         channel = self.bot.get_channel(940939714679164928)
